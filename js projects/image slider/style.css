@@ -1,0 +1,39 @@
+body{
+    height: 100vh;
+    background-color: wheat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+.imageContainer{
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* transform: translateX(-500px); */
+}
+.sliderContainer {
+    display: flex;
+    position: absolute;
+    width: 500px;
+    overflow: hidden;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+/* img{
+    width: 500px;
+    height: 333px;
+} */
+.btn{
+    position: absolute;
+    top: 50%;
+    
+}
+.prev{
+    left: 10px;
+}
+.next{
+    right: 10px;
+}

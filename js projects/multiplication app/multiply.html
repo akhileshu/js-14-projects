@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+      }
+
+      .container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border: 2px solid #333;
+        border-radius: 8px;
+        text-align: center;
+      }
+
+      h1 {
+        margin: 20px;
+        text-align: center;
+      }
+
+      .score,
+      .round {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .question {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      #answer {
+        width: 100%;
+        padding: 8px;
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+
+      #submit {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      #submit:hover {
+        background-color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Multiplication App</h1>
+    <div class="container">
+      <div class="score">Score: <span id="score">0</span></div>
+      <div class="round"></div>
+      <div class="question"><span id="question"></span></div>
+      <input type="number" id="answer" placeholder="Enter your answer" />
+      <button id="submit" type="submit">Submit</button>
+    </div>
+
+    <script>
+      const container = document.querySelector(".container");
+const score = document.querySelector("#score");
+const question = document.querySelector("#question");
+const answer = document.querySelector("#answer");
+const submit = document.querySelector("#submit");
+const round = document.querySelector(".round");
+
+let x = Math.floor(Math.random() * 15) + 1;
+let y = Math.floor(Math.random() * 15) + 1;
+let played = 1;
+round.innerText = `round : ${played}/10`;
+question.textContent = `what is ${x} multiplied by ${y} ?`;
+answer.focus();
+
+function start() {
+// here sequence of steps matter
+    if (answer.value == "") alert("please enter valid answer");
+    else {
+      if (Number(answer.value) == x * y) score.textContent++;
+      else score.textContent--;
+
+      x = Math.floor(Math.random() * 15) + 1;
+      y = Math.floor(Math.random() * 15) + 1;
+      question.textContent = `what is ${x} multiplied by ${y}?`;
+      answer.value = "";
+      answer.focus();
+      played++;
+      round.innerText = `round : ${played}/10`;
+      if (played > 10) {
+        container.innerHTML = `<div class="score">Final Score: ${Number(
+          score.innerText
+        )}</div><p>Congratulations! You completed the game.</p><button id="restartButton">Restart</button>`;
+        const Restart = document.querySelector("#restartButton");
+        const reloadPage = location.reload.bind(location);
+        Restart.addEventListener("click", reloadPage);
+      }
+    }
+  }
+
+
+submit.addEventListener("click", start);
+// ENTER button
+answer.addEventListener("keyup", function (event) {
+  if (event.keyCode === 13) {
+    // Enter key code
+    submit.click(); // Trigger submit button click
+  }
+});
+
+    </script>
+  </body>
+</html>

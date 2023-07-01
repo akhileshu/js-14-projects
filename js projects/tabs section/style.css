@@ -1,0 +1,32 @@
+ /* CSS for tab buttons */
+ .btncontainer {
+    display: flex;
+}
+
+.button {
+    flex: 1;
+    padding: 10px;
+    background-color: #eee;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #ccc;
+}
+
+.button.active {
+    background-color: wheat;
+    color: #fff;
+}
+
+/* CSS for tab content */
+.contentContainer {
+    margin-top: 10px;
+}
+
+.content {
+    display: none;
+    padding: 10px;
+    background-color: wheat;
+}

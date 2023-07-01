@@ -1,0 +1,80 @@
+/* Reset some default styles */
+body {
+    margin: 0;
+    padding: 0;
+   
+  }
+  
+  /* Style the navbar */
+  .navbar {
+    
+    top: 0;
+    width: 100%;
+    background-color: #f1f1f1;
+    padding: 10px;
+    
+  }
+ 
+  
+  .navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+  }
+  
+  .navbar li {
+    margin: 0 10px;
+  
+  }
+  
+  .navbar li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    
+  }
+  
+  /* Style the image section */
+  .image-section {
+    text-align: center;
+    margin-top: 50px;
+    overflow: hidden;
+   
+    
+  }
+  
+  
+  /* Style the bottom container */
+  .bottom-container {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px;
+    
+  
+  }
+  
+  .bottom-container h2 {
+    color: #333;
+  }
+  
+  /* darkmode */
+  
+
+  .darkMode.bottom-container p ,.darkMode.bottom-container h2,.darkMode.navbar  ul li a{
+    color: #e4e3e3;
+    
+  }
+  .darkMode.bottom-container,.darkMode.navbar{
+    background-color: #333333 ;
+  }
+ 
+  
+
+
+
+  

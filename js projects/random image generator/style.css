@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+   
+}
+.image{
+    margin: 12px;
+    height: 278px;
+    width: 425px;
+}
+.btnContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
